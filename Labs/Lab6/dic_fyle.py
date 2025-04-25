@@ -1,4 +1,4 @@
-#1
+#1 Вывод директорий, файлов и всего содержимого в указанном пути
 import os
 
 def list_contents(path):
@@ -9,7 +9,7 @@ def list_contents(path):
 path = "."  
 list_contents(path)
 
-#2
+#2 Проверка существования и прав доступа к файлу
 import os
 
 def check_path_access(path):
@@ -21,7 +21,7 @@ def check_path_access(path):
 path = "test.txt"  
 check_path_access(path)
 
-#3
+#3 Проверка существования пути и разбиение на имя файла и директорию
 import os
 
 def check_path(path):
@@ -34,7 +34,7 @@ def check_path(path):
 path = "example/test.txt" 
 check_path(path)
 
-#4
+#4 Подсчёт количества строк в файле
 def count_lines(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         return sum(1 for _ in f)
@@ -42,7 +42,7 @@ def count_lines(filename):
 filename = "example.txt"  
 print("Number of lines:", count_lines(filename))
 
-#5
+#5 Запись списка в файл
 def write_list_to_file(filename, lst):
     with open(filename, 'w', encoding='utf-8') as f:
         f.writelines(f"{item}\n" for item in lst)
@@ -51,21 +51,21 @@ lst = ["apple", "banana", "cherry"]
 filename = "output.txt"  # Укажите имя файла
 write_list_to_file(filename, lst)
 
-#6
+#6 Генерация 26 файлов
 import string
 
 for letter in string.ascii_uppercase:
     with open(f"{letter}.txt", "w", encoding="utf-8") as f:
         f.write(f"File {letter}.txt")
 
-#7
+#7 Копирование содержимого одного файла в другой
 def copy_file(src, dst):
     with open(src, 'r', encoding='utf-8') as f1, open(dst, 'w', encoding='utf-8') as f2:
         f2.write(f1.read())
 
 copy_file("source.txt", "destination.txt")
 
-#8
+#8 Удаление файла
 import os
 
 def delete_file(path):
